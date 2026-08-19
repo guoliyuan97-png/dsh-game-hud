@@ -42,7 +42,10 @@
 
 ## 数据通道
 
-- 宿主注册三个同源 HTTP 路由：`GET /hud/state`、`POST /hud/digest`、`POST /hud/seed`。
+- 宿主注册三个同源 HTTP 路由：
+  - `GET /hud/state?sessionId=<id>` — 实时状态：余额 / 上下文 / 峰谷定价 / 压缩轮数 / `maxBalance`
+  - `POST /hud/digest` — 用当前模型生成记忆摘要（携带记忆新对话的数据源）
+  - `POST /hud/seed` — 向新会话静默注入记忆（`user/message` append，不触发 agent 回复、不回答旧问题）
 - API Key 经宿主 `credentials` 服务解析（默认 `DEEPSEEK_API_KEY`，自动读取 `llm-deepseek` 配置中的 `apiKeyEnv`）。
 - 客户端以 `window.__ModuleLoader__.load()` 手写格式打包，无需构建器。
 
