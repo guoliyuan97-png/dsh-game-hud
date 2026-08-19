@@ -1,0 +1,32 @@
+{
+  "name": "dsh-game-hud",
+  "version": "1.0.0",
+  "description": "Game-style floating HUD for DeepSeek Harness: HP bar (account balance vs ¥20 cap), MP bar (context remaining), official peak/valley pricing with switch countdown, auto-compaction when context < 5% remains, and a memory-carrying new-conversation button. · 游戏风格悬浮 HUD：余额血条、上下文蓝条、官方峰谷定价与切换倒计时、上下文不足5%自动压缩、携带记忆开启新对话。",
+  "type": "module",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-connection"
+      ]
+    }
+  }
+}
