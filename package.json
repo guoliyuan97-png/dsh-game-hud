@@ -5,6 +5,29 @@
   "type": "module",
   "main": "lib/index.js",
   "license": "MIT",
+  "keywords": [
+    "deepseek",
+    "dsh",
+    "plugin",
+    "hud",
+    "game",
+    "balance",
+    "context",
+    "peak-valley",
+    "compaction",
+    "deepseek-harness"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guoliyuan97-png/dsh-game-hud.git"
+  },
+  "homepage": "https://github.com/guoliyuan97-png/dsh-game-hud",
+  "bugs": {
+    "url": "https://github.com/guoliyuan97-png/dsh-game-hud/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
   "exports": {
     ".": "./lib/index.js",
     "./client": "./lib/client.js",

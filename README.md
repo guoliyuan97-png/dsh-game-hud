@@ -25,7 +25,23 @@
 
 ## 安装
 
+### 方式一：从 GitHub 直接安装（推荐，无需本地副本）
+
 在 DSH 的 web profile（如 `E:\.dsh\profiles\web`）中：
+
+```jsonc
+// package.json
+{
+  "dependencies": {
+    "dsh-game-hud": "github:guoliyuan97-png/dsh-game-hud#v1.0.0"
+  },
+  "dsh": { "profile": { "bundles": ["dsh-game-hud"] } }
+}
+```
+
+然后 `pnpm install` 并重启 DSH，浏览器右下角会出现可拖动的 HUD 面板。
+
+### 方式二：本地开发（file: 引用）
 
 ```jsonc
 // package.json
@@ -34,8 +50,6 @@
   "dsh": { "profile": { "bundles": ["dsh-game-hud"] } }
 }
 ```
-
-然后 `pnpm install` 并重启 DSH，浏览器右下角会出现可拖动的 HUD 面板。
 
 ## 许可
 
