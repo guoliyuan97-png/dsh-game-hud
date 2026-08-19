@@ -1,0 +1,15 @@
+# npm/pnpm
+node_modules/
+.pnpm-store/
+*.log
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local profile test dirs
+.profiles/
