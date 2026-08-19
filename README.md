@@ -10,7 +10,7 @@
 
 ## 配置
 
-所有配置项都有默认值，可按需在 DSH 设置（或 profile 的 `cordis.patch.yml`）中覆盖：
+所有配置项都有默认值，可通过 **DSH 设置 → 插件 → dsh-game-hud** 界面编辑（保存后 HUD 实时生效，无需重启），或在 profile 的 `cordis.patch.yml` 中覆盖：
 
 | 配置项 | 类型 | 默认值 | 说明 |
 |---|---|---|---|
@@ -48,7 +48,15 @@
 
 ## 安装
 
-### 方式一：从 GitHub 直接安装（推荐，无需本地副本）
+### 方式一：dsh 命令安装（推荐）
+
+```bash
+dsh plugin --profile web add github:guoliyuan97-png/dsh-game-hud#v1.2.0
+```
+
+安装后重启 DSH：HUD 面板出现在浏览器右下角；配置入口在 **设置 → 插件 → dsh-game-hud**。
+
+### 方式二：从 GitHub 直接安装
 
 在 DSH 的 web profile（如 `E:\.dsh\profiles\web`）中：
 
@@ -56,7 +64,7 @@
 // package.json
 {
   "dependencies": {
-    "dsh-game-hud": "github:guoliyuan97-png/dsh-game-hud#v1.0.0"
+    "dsh-game-hud": "github:guoliyuan97-png/dsh-game-hud#v1.2.0"
   },
   "dsh": { "profile": { "bundles": ["dsh-game-hud"] } }
 }
@@ -64,7 +72,7 @@
 
 然后 `pnpm install` 并重启 DSH，浏览器右下角会出现可拖动的 HUD 面板。
 
-### 方式二：本地开发（file: 引用）
+### 方式三：本地开发（file: 引用）
 
 ```jsonc
 // package.json
