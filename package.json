@@ -28,6 +28,9 @@
   "engines": {
     "node": ">=18"
   },
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/client.js"
+  },
   "exports": {
     ".": "./lib/index.js",
     "./client": "./lib/client.js",

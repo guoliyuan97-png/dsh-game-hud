@@ -1,0 +1,21 @@
+# dsh-game-hud configuration example
+# Copy relevant keys into your profile's cordis.patch.yml (or edit via
+# DSH Settings → Plugins → dsh-game-hud, which persists to the settings file).
+
+- insert:
+    - id: game-hud
+      name: 'dsh-game-hud'
+      config:
+        # HP bar full-scale amount in CNY. Balance above this shows full bar;
+        # below it the bar shrinks proportionally.
+        maxBalance: 20
+
+        # Optional per-model peak/valley prices (CNY per million tokens).
+        # Models not listed here use the built-in table.
+        # priceTable:
+        #   deepseek-v4-flash:
+        #     peak: { input: 3.0, output: 9.0, cacheHit: 0.1 }
+        #     valley: { input: 1.5, output: 4.5, cacheHit: 0.05 }
+        #   deepseek-v4-pro:
+        #     peak: { input: 9.0, output: 27.0, cacheHit: 0.3 }
+        #     valley: { input: 4.5, output: 13.5, cacheHit: 0.15 }
