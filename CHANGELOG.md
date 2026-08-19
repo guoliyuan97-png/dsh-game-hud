@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.0] - 2026-08-19
+
+### Added
+- Collapsed mini view: the minimized HUD now shows compact HP (balance) and MP (context) bars for a quick glance.
+- Low-balance red alert: when the HP bar (balance) drops below `lowThreshold` percent (default 10), the HUD frame flashes red. Configurable via `lowAlert` (default true) and `lowThreshold`; only the balance bar triggers it — the context bar does not.
+
 ## [1.2.0] - 2026-08-19
 
 ### Added
