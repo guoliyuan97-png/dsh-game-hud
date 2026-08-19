@@ -1,4 +1,13 @@
 # dsh bundle patch: inserts this plugin into a profile's layer stack.
+# Config defaults (override by editing this file or DSH settings):
+#   maxBalance - HP bar full-scale amount in CNY (default 20).
+#   priceTable - optional per-model peak/valley prices (CNY per million tokens).
 - insert:
     - id: game-hud
       name: 'dsh-game-hud'
+      config:
+        maxBalance: 20
+        # priceTable:
+        #   deepseek-v4-flash:
+        #     peak: { input: 3.0, output: 9.0, cacheHit: 0.1 }
+        #     valley: { input: 1.5, output: 4.5, cacheHit: 0.05 }

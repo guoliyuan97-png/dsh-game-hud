@@ -2,11 +2,34 @@
 
 游戏风格悬浮 HUD 插件（DeepSeek Harness）。
 
-- ❤ **血条**：实时显示 DeepSeek 账户余额（官方 `user/balance` 接口），满格 = ¥20。
+- ❤ **血条**：实时显示 DeepSeek 账户余额（官方 `user/balance` 接口），满格金额可配置（默认 ¥20）。
 - ✦ **蓝条**：当前会话上下文剩余（与官方 UI 同源的 `contextPressure` 投影），随对话增长从满格减少。
 - ▲▼ **峰谷定价**：官方规则（北京时间 09:00–12:00 / 14:00–18:00 为高峰，谷时半价），显示当前单价与距下次切换倒计时（每秒跳动）。
 - ⚡ **自动压缩**：上下文剩余 < 5% 时自动触发 `/compact`；压缩满 2 轮后出现「开启新对话（携带记忆）」按钮；不点击则继续自动压缩。
 - 🔁 **携带记忆新对话**：点击后用当前模型生成记忆摘要 → 新建会话并注入记忆（不回答旧问题、不丢记忆），新会话上下文重新累计。
+
+## 配置
+
+所有配置项都有默认值，可按需在 DSH 设置（或 profile 的 `cordis.patch.yml`）中覆盖：
+
+| 配置项 | 类型 | 默认值 | 说明 |
+|---|---|---|---|
+| `maxBalance` | number | `20` | 血条满格金额（CNY）。余额超过此值显示满格，低于按比例减少 |
+| `priceTable` | object | `{}` | 可选：按模型覆盖峰谷单价（元/百万 tokens）。未覆盖的模型用内置价格表 |
+
+`cordis.patch.yml` 示例：
+
+```yaml
+- insert:
+    - id: game-hud
+      name: 'dsh-game-hud'
+      config:
+        maxBalance: 50
+        priceTable:
+          deepseek-v4-flash:
+            peak: { input: 3.0, output: 9.0, cacheHit: 0.1 }
+            valley: { input: 1.5, output: 4.5, cacheHit: 0.05 }
+```
 
 ## 实时机制
 
