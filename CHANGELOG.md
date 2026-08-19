@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1] - 2026-08-19
+
+### Fixed
+- Settings card now renders as a collapsible card like the built-in plugin cards (header with name/description + chevron, expandable body), instead of a flat always-open block.
+- Settings card text is readable again: the dark HUD palette (`#d8e7f6` etc.) was being drawn on the light settings page, making labels and hints nearly invisible. Labels, inputs, hints and messages now use the DSH theme tokens (`--dsw-alias-label-*`, `--dsw-alias-state-*`), matching the other plugin cards in both light and dark themes.
+- Card now shows an "未保存" badge when edits are pending and a "放弃修改 / 保存" footer, consistent with the built-in plugin cards.
+
 ## [1.3.0] - 2026-08-19
 
 ### Added
