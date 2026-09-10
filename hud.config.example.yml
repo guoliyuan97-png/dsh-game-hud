@@ -13,9 +13,9 @@
         # Optional per-model peak/valley prices (CNY per million tokens).
         # Models not listed here use the built-in table.
         # priceTable:
-        #   deepseek-v4-flash:
-        #     peak: { input: 3.0, output: 9.0, cacheHit: 0.1 }
-        #     valley: { input: 1.5, output: 4.5, cacheHit: 0.05 }
+        #   deepseek-v4-flash:   # 2026-09-10 12:00 起官方价
+        #     peak: { input: 2.0, output: 8.0, cacheHit: 0.04 }
+        #     valley: { input: 1.0, output: 4.0, cacheHit: 0.02 }
         #   deepseek-v4-pro:
         #     peak: { input: 9.0, output: 27.0, cacheHit: 0.3 }
         #     valley: { input: 4.5, output: 13.5, cacheHit: 0.15 }
