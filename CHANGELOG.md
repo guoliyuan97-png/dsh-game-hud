@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.3.3] - 2026-10-09
+
+### Fixed
+- Client half now activates on DSH 0.2.0-rc.2: `settingsScope` is not a client
+  service in that release, and a hard `inject` on a missing service keeps the
+  cordis fiber INACTIVE forever — the floating HUD never rendered, with no error.
+  The plugin injects `slots`, `sessions` and `timer` only.
+- The selected session is read from the sessions snapshot the way the shipped UI
+  derives it (`byId[*].retainedBy.mainView > 0`); the previous `state.current`
+  field does not exist, so the HUD stayed on "waiting for session".
+- Settings row moved from the non-existent `settingsScope` service and
+  `settings.plugin.item` slot to the shipped `configForms` service and the
+  `settings.general.item` slot, registered behind its own inject.
+- "New conversation with memory" uses the `uiWorkspace.startSession()` service
+  instead of the non-existent `sessions.create()` / `sessions.open()`, and seeds
+  the digest through `/hud/seed` once the new session becomes selected.
+
 ## [1.3.2] - 2026-09-10
 
 ### Fixed
